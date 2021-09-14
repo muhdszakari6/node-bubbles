@@ -1,20 +1,29 @@
 const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
+const cors = require('cors');
+
 const moment = require('moment')
 const {userJoin, getCurrentUser,userLeave, getRoomUsers} = require('./util/user')
 
 
 const app = express();
 const server = http.createServer(app)
-// const io = socketio(server)
 
 const io = socketio(server, {
     cors: {
         origin: "http://localhost:4200",
+        credentials : true
         //   methods: ["GET", "POST"]
     }
 });
+
+var corsOptions = {
+    origin: ['http://localhost:3000', 'https://easytalkchat.netlify.app'],
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'] };
+
+app.use(cors(corsOptions));
 
 const bot = "Bubbles"
 
