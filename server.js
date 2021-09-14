@@ -14,7 +14,7 @@ var corsOptions = {
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE']
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 const server = http.createServer(app)
 
