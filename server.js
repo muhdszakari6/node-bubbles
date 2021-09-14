@@ -19,7 +19,7 @@ const io = socketio(server, {
 });
 
 var corsOptions = {
-    origin: ['http://localhost:3000', 'https://easytalkchat.netlify.app'],
+    origin: ['http://localhost:4200', 'https://easytalkchat.netlify.app'],
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'] };
 
